@@ -1,0 +1,75 @@
+.widget-wrapper {
+    width: 400px;
+    min-height: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.day {
+    background: linear-gradient(176deg, rgba(108, 216, 250, 1) 0%, rgba(50, 142, 153, 1) 53%, rgba(26, 101, 119, 1) 100%);
+    box-shadow: 10px 5px 20px 1px rgba(108, 216, 250, 1);
+}
+
+.night {
+    background: linear-gradient(176deg, rgba(77, 78, 78, 1) 0%, rgba(51, 51, 51, 1) 53%, rgba(2, 9, 10, 1) 100%);
+    box-shadow: 10px 5px 20px 1px rgba(77, 78, 78, 1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header button {
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 900;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.body .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.body img {
+    width: 144px;
+    height: 144px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-item span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-item h4 {
+    font-size: 18px;
+    font-weight: medium;
+}

@@ -1,0 +1,48 @@
+<div class="widget-wrapper" [class.day]="dayOrNightLabel === dayNight.DAY" [class.night]="dayOrNightLabel === dayNight.NIGHT">
+  <ng-container *ngIf="widgetData$ | async as data">
+    <div class="header">
+      <span>
+        <img width="40" height="40" [src]="dayOrNightLabel === dayNight.DAY ? '/assets/whether-icons/sunny.svg' : '/assets/whether-icons/moon.svg'" />
+      </span>
+      <button (click)="swapDayNight()">
+        <img src="/assets/whether-icons/refresh-icon.svg" width="40" height="40" currentColor="#fff" />
+      </button>
+    </div>
+    <div class="body">
+      <h2>{{ data.status }}</h2>
+      <img [src]="widgetIconPath" alt="" />
+      <div class="content">
+        <ng-container *ngIf="dayOrNightLabel === dayNight.DAY; else nightTemp">
+          <h3>{{ data.dayTemp }}°C</h3>
+          <p>{{ data.date | date }}</p>
+        </ng-container>
+        <ng-template #nightTemp>
+          <h3>{{ data.nightTemp }}°C</h3>
+          <p>{{ data.date | date }}</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="footer">
+      <ng-container *ngIf="dayOrNightLabel === dayNight.DAY; else nightData">
+        <div class="footer-item">
+          <span>Wind</span>
+          <h4>{{ data.dayWind }} Km/h</h4>
+        </div>
+        <div class="footer-item">
+          <span>Humidity</span>
+          <h4>{{ data.dayHumidity }}%</h4>
+        </div>
+      </ng-container>
+      <ng-template #nightData>
+        <div class="footer-item">
+          <span>Wind</span>
+          <h4>{{ data.nightWind }} Km/h</h4>
+        </div>
+        <div class="footer-item">
+          <span>Humidity</span>
+          <h4>{{ data.nightHumidity }}%</h4>
+        </div>
+      </ng-template>
+    </div>
+  </ng-container>
+</div>

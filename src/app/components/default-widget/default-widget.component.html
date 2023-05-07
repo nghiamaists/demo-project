@@ -1,0 +1,22 @@
+<div class="widget-wrapper">
+  <ng-container *ngIf="widgetData$ | async as data">
+    <div class="body">
+      <h2>{{ data.status }}</h2>
+      <img [src]="widgetIconPath" alt="" />
+      <div class="content">
+        <h3>{{ data.dayTemp }}°C</h3>
+        <p>{{ data.date | date }}</p>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-item">
+        <span>Wind</span>
+        <h4>{{ data.dayWind }} Km/h</h4>
+      </div>
+      <div class="footer-item">
+        <span>Humidity</span>
+        <h4>{{ data.dayHumidity }}%</h4>
+      </div>
+    </div>
+  </ng-container>
+</div>
