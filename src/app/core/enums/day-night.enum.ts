@@ -1,4 +1,4 @@
 export enum DayNight {
-    DAY = 'Day',
-    NIGHT = 'Night'
+  DAY = 'Day',
+  NIGHT = 'Night',
 }

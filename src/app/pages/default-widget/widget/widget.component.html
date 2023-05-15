@@ -1,11 +1,11 @@
 <div class="widget-wrapper">
-  <ng-container *ngIf="widgetData$ | async as data">
+  <ng-container *ngIf="data">
     <div class="body">
       <h2>{{ data.status }}</h2>
-      <img [src]="widgetIconPath" alt="" />
+      <img [src]="data.iconPath" alt="" />
       <div class="content">
         <h3>{{ data.dayTemp }}°C</h3>
-        <p>{{ data.date | date }}</p>
+        <p>{{ data.date }}</p>
       </div>
     </div>
     <div class="footer">

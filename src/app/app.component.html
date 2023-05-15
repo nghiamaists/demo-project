@@ -1,3 +1,15 @@
-<app-default-widget [id]="1"></app-default-widget>
-<app-interactable-widget [id]="2"></app-interactable-widget>
-<app-interactable-widget [id]="3"></app-interactable-widget>
+<nav class="nav">
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Default Widgets</a
+  >
+  <a
+    routerLink="/interactive"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Interactive Widgets</a
+  >
+</nav>
+<router-outlet></router-outlet>

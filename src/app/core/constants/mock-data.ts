@@ -1,7 +1,6 @@
 import { WhetherStatus } from '../enums/Whether.enum';
 import { WhetherInterface } from '../interfaces/whether-widget.interface';
 
-
 export const MOCK_WHETHER: WhetherInterface[] = [
   {
     id: 1,
@@ -34,7 +33,7 @@ export const MOCK_WHETHER: WhetherInterface[] = [
     dayHumidity: 30,
     nightWind: 17,
     nightHumidity: 29,
-    status: WhetherStatus.RAINNY,
+    status: WhetherStatus.RAINY,
   },
   {
     id: 4,
@@ -45,6 +44,31 @@ export const MOCK_WHETHER: WhetherInterface[] = [
     dayHumidity: 30,
     nightWind: 17,
     nightHumidity: 29,
-    status: WhetherStatus.RAINNY,
+    status: WhetherStatus.RAINY,
+  },
+];
+
+export const OTHER_MOCK_WHETHER: WhetherInterface[] = [
+  {
+    id: 1,
+    date: new Date(2023, 4, 10),
+    dayTemp: 35,
+    nightTemp: 28,
+    dayWind: 15,
+    dayHumidity: 30,
+    nightWind: 17,
+    nightHumidity: 29,
+    status: WhetherStatus.SUNNY,
+  },
+  {
+    id: 2,
+    date: new Date(2023, 4, 11),
+    dayTemp: 31,
+    nightTemp: 25,
+    dayWind: 15,
+    dayHumidity: 30,
+    nightWind: 17,
+    nightHumidity: 29,
+    status: WhetherStatus.CLOUDY,
   },
 ];

@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Day Temp</th>
+      <th>Nigh Temp</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="widgetData$ | async as widgetData">
+    <tr *ngFor="let data of widgetData">
+      <td>{{ data.id }}</td>
+      <td>{{ data.date }}</td>
+      <td>
+        <app-highlight-cell> {{ data.dayTemp }}°C </app-highlight-cell>
+      </td>
+      <td>{{ data.nightTemp }}°C</td>
+      <td class="action">
+        <button (click)="viewWidget(data)">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
