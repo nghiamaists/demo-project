@@ -22,7 +22,6 @@ export class HighlightCellComponent implements AfterViewChecked {
   ) {}
 
   public ngAfterViewChecked(): void {
-    console.log(this.highLightColor);
     this.element.nativeElement.style.color = this.highLightColor;
   }
 }

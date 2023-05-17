@@ -14,3 +14,7 @@ td {
     border: 1px solid;
     border-collapse: collapse;
 }
+
+th, td {
+    height: 50px;
+}

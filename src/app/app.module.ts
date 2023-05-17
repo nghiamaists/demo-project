@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WidgetDataProvider } from './core/services/widget-data-provider.service';
 import { WidgetIconProvider } from './core/services/widget-icon-provider.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoggerModule } from './shared/logger/logger/logger.module';
 import { MOCK_DATA } from './core/di/moc-data.di';
 import { MOCK_WHETHER } from './core/constants/mock-data';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,12 +20,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    LoggerModule
   ],
   providers: [
     {
-      provide: WidgetDataProvider,
-      useClass: WidgetDataProvider,
+      provide: MOCK_DATA,
+      useValue: MOCK_WHETHER
     },
+    WidgetDataProvider,
     WidgetIconProvider,
   ],
   bootstrap: [AppComponent],

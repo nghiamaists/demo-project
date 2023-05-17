@@ -1,7 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MOCK_WHETHER } from './core/constants/mock-data';
-import { MOCK_DATA } from './core/di/moc-data.di';
 
 const routes: Routes = [
   {
@@ -22,12 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  providers: [
-    {
-      provide: MOCK_DATA,
-      useValue: MOCK_WHETHER,
-    },
-  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -4,29 +4,28 @@ import { CommonModule } from '@angular/common';
 import { InteractiveWidgetRoutingModule } from './interactive-widget-routing.module';
 import { WidgetComponent } from './widget/widget.component';
 import { InteractiveWidgetComponent } from './interactive-widget.component';
-import { MOCK_DATA, MOCK_OTHER_DATA } from 'src/app/core/di/moc-data.di';
 import { OTHER_MOCK_WHETHER } from 'src/app/core/constants/mock-data';
+import { HighlightModule } from 'src/app/shared/highlight-cell/shared.module';
+import { MOCK_DATA, MOCK_OTHER_DATA } from 'src/app/core/di/moc-data.di';
+import { AlterWidgetDataProvider } from 'src/app/core/services/alter-widget-data-provider.service';
 import { WidgetDataProvider } from 'src/app/core/services/widget-data-provider.service';
-import { WidgetIconProvider } from 'src/app/core/services/widget-icon-provider.service';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { Logger } from 'src/app/shared/logger/logger/logger.service';
 
 @NgModule({
   declarations: [WidgetComponent, InteractiveWidgetComponent],
   providers: [
-    {
-      provide: WidgetDataProvider,
+    // WidgetDataProvider,
+    // {
+    //   provide: AlterWidgetDataProvider,
+    //   useExisting: WidgetDataProvider,
+    // },
+    AlterWidgetDataProvider,
+    /* {
+      provide: AlterWidgetDataProvider,
       useClass: WidgetDataProvider,
-    },
-    {
-      provide: MOCK_OTHER_DATA,
-      useValue: OTHER_MOCK_WHETHER,
-    },
-    {
-      provide: MOCK_DATA,
-      useExisting: MOCK_OTHER_DATA,
-    },
-    WidgetIconProvider,
+      deps: [MOCK_DATA, Logger]
+    }, */
   ],
-  imports: [CommonModule, InteractiveWidgetRoutingModule, SharedModule],
+  imports: [CommonModule, InteractiveWidgetRoutingModule, HighlightModule],
 })
 export class InteractiveWidgetModule {}

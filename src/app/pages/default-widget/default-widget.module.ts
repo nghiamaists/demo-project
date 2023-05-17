@@ -8,9 +8,10 @@ import { WidgetDataProvider } from 'src/app/core/services/widget-data-provider.s
 import { WidgetIconProvider } from 'src/app/core/services/widget-icon-provider.service';
 import { MOCK_DATA } from 'src/app/core/di/moc-data.di';
 import { OTHER_MOCK_WHETHER } from 'src/app/core/constants/mock-data';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { HighlightModule } from 'src/app/shared/highlight-cell/shared.module';
 import { WhetherInterface } from 'src/app/core/interfaces/whether-widget.interface';
 import { WidgetDataLimitedProvider } from 'src/app/core/services/widget-data-limied-provider.service';
+import { LoggerModule } from 'src/app/shared/logger/logger/logger.module';
 
 @NgModule({
   declarations: [DefaultWidgetComponent, WidgetComponent],
@@ -31,12 +32,16 @@ import { WidgetDataLimitedProvider } from 'src/app/core/services/widget-data-lim
         return new WidgetDataLimitedProvider(data, 2, 4)
       },
     }, */
-    // {
-    //   provide: MOCK_DATA,
-    //   useValue: OTHER_MOCK_WHETHER,
-    // },
-    WidgetIconProvider,
+   /*  {
+      provide: MOCK_DATA,
+      useValue: OTHER_MOCK_WHETHER,
+    }, */
   ],
-  imports: [CommonModule, DefaultWidgetRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    DefaultWidgetRoutingModule,
+    HighlightModule,
+    // LoggerModule,
+  ],
 })
 export class DefaultWidgetModule {}
