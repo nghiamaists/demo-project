@@ -4,6 +4,8 @@ import { Observable, of } from 'rxjs';
 import { MOCK_DATA } from '../di/moc-data.di';
 import { Logger } from 'src/app/shared/logger/logger/logger.service';
 
+// console.log('AlterWidgetDataProvider bundled');
+
 @Injectable()
 export class AlterWidgetDataProvider {
   constructor(@Inject(MOCK_DATA) private data: WhetherInterface[], private logger: Logger) {
@@ -11,6 +13,6 @@ export class AlterWidgetDataProvider {
   }
 
   public getAllData(): Observable<WhetherInterface[]> {
-    return of(this.data.reverse());
+    return of(this.data.reverse().map(item => ({...item, id: item.id + ' Alternative'})));
   }
 }

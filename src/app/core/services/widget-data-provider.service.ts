@@ -24,7 +24,7 @@ export class WidgetDataProvider {
     return of(this.data.length);
   }
 
-  public getDataById(id: number): Observable<WhetherInterface> {
+  public getDataById(id: string): Observable<WhetherInterface> {
     return of(this.data.find((item) => item.id === id)!);
   }
 }

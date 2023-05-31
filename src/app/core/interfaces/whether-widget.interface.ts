@@ -1,7 +1,7 @@
 import { WhetherStatus } from '../enums/Whether.enum';
 
 export interface WhetherInterface {
-  id: number;
+  id: string;
   dayTemp: number;
   nightTemp: number;
   dayWind: number;

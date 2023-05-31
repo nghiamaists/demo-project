@@ -11,6 +11,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoggerModule } from './shared/logger/logger/logger.module';
 import { MOCK_DATA } from './core/di/moc-data.di';
 import { MOCK_WHETHER } from './core/constants/mock-data';
+import { SharedModule } from './shared/components/shared.module';
+import { TestTreeShakeService } from 'src/app/core/services/test-tree-shake-able.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,8 @@ import { MOCK_WHETHER } from './core/constants/mock-data';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    LoggerModule
+    LoggerModule,
+    SharedModule
   ],
   providers: [
     {
@@ -29,6 +32,7 @@ import { MOCK_WHETHER } from './core/constants/mock-data';
     },
     WidgetDataProvider,
     WidgetIconProvider,
+    // TestTreeShakeService
   ],
   bootstrap: [AppComponent],
 })

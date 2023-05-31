@@ -1,12 +1,11 @@
 import { Inject } from '@angular/core';
 import { WhetherInterface } from '../interfaces/whether-widget.interface';
 import { Observable, of } from 'rxjs';
-import { MOCK_DATA } from '../di/moc-data.di';
 
 export class WidgetDataLimitedProvider {
   dataLimited: WhetherInterface[];
   constructor(
-    @Inject(MOCK_DATA) private data: WhetherInterface[],
+    data: WhetherInterface[],
     private start: number,
     private end: number
   ) {
@@ -21,7 +20,7 @@ export class WidgetDataLimitedProvider {
     return of(this.dataLimited.length);
   }
 
-  public getDataById(id: number): Observable<WhetherInterface> {
+  public getDataById(id: string): Observable<WhetherInterface> {
     return of(this.dataLimited.find((item) => item.id === id)!);
   }
 }
