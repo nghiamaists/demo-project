@@ -8,7 +8,7 @@ import { WidgetDataProvider } from 'src/app/core/services/widget-data-provider.s
 import { WidgetIconProvider } from 'src/app/core/services/widget-icon-provider.service';
 import { MOCK_DATA } from 'src/app/core/di/moc-data.di';
 import { OTHER_MOCK_WHETHER } from 'src/app/core/constants/mock-data';
-import { HighlightModule } from 'src/app/shared/highlight-cell/shared.module';
+import { SharedModule } from 'src/app/shared/components/shared.module';
 import { WhetherInterface } from 'src/app/core/interfaces/whether-widget.interface';
 import { WidgetDataLimitedProvider } from 'src/app/core/services/widget-data-limied-provider.service';
 import { LoggerModule } from 'src/app/shared/logger/logger/logger.module';
@@ -36,11 +36,12 @@ import { LoggerModule } from 'src/app/shared/logger/logger/logger.module';
       provide: MOCK_DATA,
       useValue: OTHER_MOCK_WHETHER,
     }, */
+    // WidgetDataProvider
   ],
   imports: [
     CommonModule,
     DefaultWidgetRoutingModule,
-    HighlightModule,
+    SharedModule,
     // LoggerModule,
   ],
 })

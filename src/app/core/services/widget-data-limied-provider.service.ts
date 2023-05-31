@@ -21,7 +21,7 @@ export class WidgetDataLimitedProvider {
     return of(this.dataLimited.length);
   }
 
-  public getDataById(id: number): Observable<WhetherInterface> {
+  public getDataById(id: string): Observable<WhetherInterface> {
     return of(this.dataLimited.find((item) => item.id === id)!);
   }
 }

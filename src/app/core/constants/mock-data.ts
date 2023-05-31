@@ -3,7 +3,7 @@ import { WhetherInterface } from '../interfaces/whether-widget.interface';
 
 export const MOCK_WHETHER: WhetherInterface[] = [
   {
-    id: 1,
+    id: '1',
     date: new Date(2023, 4, 10),
     dayTemp: 35,
     nightTemp: 28,
@@ -14,7 +14,7 @@ export const MOCK_WHETHER: WhetherInterface[] = [
     status: WhetherStatus.SUNNY,
   },
   {
-    id: 2,
+    id: '2',
     date: new Date(2023, 4, 11),
     dayTemp: 31,
     nightTemp: 25,
@@ -25,7 +25,7 @@ export const MOCK_WHETHER: WhetherInterface[] = [
     status: WhetherStatus.CLOUDY,
   },
   {
-    id: 3,
+    id: '3',
     date: new Date(2023, 4, 12),
     dayTemp: 29,
     nightTemp: 21,
@@ -36,7 +36,7 @@ export const MOCK_WHETHER: WhetherInterface[] = [
     status: WhetherStatus.RAINY,
   },
   {
-    id: 4,
+    id: '4',
     date: new Date(2023, 4, 13),
     dayTemp: 30,
     nightTemp: 22,
@@ -50,7 +50,7 @@ export const MOCK_WHETHER: WhetherInterface[] = [
 
 export const OTHER_MOCK_WHETHER: WhetherInterface[] = [
   {
-    id: 1,
+    id: '1',
     date: new Date(2023, 4, 10),
     dayTemp: 35,
     nightTemp: 28,
@@ -61,7 +61,7 @@ export const OTHER_MOCK_WHETHER: WhetherInterface[] = [
     status: WhetherStatus.SUNNY,
   },
   {
-    id: 2,
+    id: '2',
     date: new Date(2023, 4, 11),
     dayTemp: 31,
     nightTemp: 25,

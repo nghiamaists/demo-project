@@ -5,14 +5,15 @@ import { InteractiveWidgetRoutingModule } from './interactive-widget-routing.mod
 import { WidgetComponent } from './widget/widget.component';
 import { InteractiveWidgetComponent } from './interactive-widget.component';
 import { OTHER_MOCK_WHETHER } from 'src/app/core/constants/mock-data';
-import { HighlightModule } from 'src/app/shared/highlight-cell/shared.module';
+import { SharedModule } from 'src/app/shared/components/shared.module';
 import { MOCK_DATA, MOCK_OTHER_DATA } from 'src/app/core/di/moc-data.di';
 import { AlterWidgetDataProvider } from 'src/app/core/services/alter-widget-data-provider.service';
 import { WidgetDataProvider } from 'src/app/core/services/widget-data-provider.service';
 import { Logger } from 'src/app/shared/logger/logger/logger.service';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-  declarations: [WidgetComponent, InteractiveWidgetComponent],
+  declarations: [WidgetComponent, InteractiveWidgetComponent, TableComponent],
   providers: [
     // WidgetDataProvider,
     // {
@@ -20,12 +21,7 @@ import { Logger } from 'src/app/shared/logger/logger/logger.service';
     //   useExisting: WidgetDataProvider,
     // },
     AlterWidgetDataProvider,
-    /* {
-      provide: AlterWidgetDataProvider,
-      useClass: WidgetDataProvider,
-      deps: [MOCK_DATA, Logger]
-    }, */
   ],
-  imports: [CommonModule, InteractiveWidgetRoutingModule, HighlightModule],
+  imports: [CommonModule, InteractiveWidgetRoutingModule, SharedModule],
 })
 export class InteractiveWidgetModule {}
